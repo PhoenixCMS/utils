@@ -71,7 +71,7 @@ foreach (['bool', 'int', 'float', 'string', 'array', 'object'] as $key) {
 	}, 'PhoenixCMS\Utils\InvalidTypeException');
 }
 
-/*$object = new stdClass;
+$object = new stdClass;
 $object->test = 1;
 
 $hashMap = HashMap::from([
@@ -81,8 +81,8 @@ $hashMap = HashMap::from([
 	'object1' => $object,
 ], TRUE);
 
-Assert::type('PhoenixCMS\Utils\HashMap', $arrayHashMap = $hashMap->getArray('array1')); // TODO fix
+Assert::type('PhoenixCMS\Utils\HashMap', $arrayHashMap = $hashMap->getArray('array1'));
 Assert::type('PhoenixCMS\Utils\HashMap', $objectHashMap = $hashMap->getObject('object1'));
 
 Assert::equal(1, $arrayHashMap->getInt('test'));
-Assert::equal(1, $objectHashMap->getInt('test'));*/
+Assert::equal(1, $objectHashMap->getInt('test'));

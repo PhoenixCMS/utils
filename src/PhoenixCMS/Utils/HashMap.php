@@ -172,7 +172,7 @@ class HashMap
 	 */
 	public function get($key, $type, $nullable)
 	{
-		if (!in_array($key, $this->data)) {
+		if (!array_key_exists($key, $this->data)) {
 			throw new InvalidTypeException("Missing '$key' key in HashMap.");
 		}
 
