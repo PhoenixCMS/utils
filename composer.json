@@ -1,0 +1,15 @@
+{
+    "name": "phoenixcms/utils",
+    "description": "Utils extension for PhoenixCMS",
+    "require": {
+        "php": ">5.4.0"
+    },
+    "require-dev": {
+        "nette/tester": "~1.5.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}
