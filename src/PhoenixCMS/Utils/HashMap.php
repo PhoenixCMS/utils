@@ -5,10 +5,12 @@
 
 namespace PhoenixCMS\Utils;
 
+use IteratorAggregate;
+use RecursiveArrayIterator;
 use Traversable;
 
 
-class HashMap
+class HashMap implements IteratorAggregate
 {
 
 	const TYPE_BOOL = 'bool';
@@ -222,5 +224,14 @@ class HashMap
 			default:
 				throw new InvalidTypeException("Invalid type '$type'.");
 		}
+	}
+
+
+	/**
+	 * @return RecursiveArrayIterator
+	 */
+	public function getIterator()
+	{
+		return new RecursiveArrayIterator($this->data);
 	}
 }
