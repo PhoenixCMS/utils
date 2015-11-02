@@ -101,7 +101,13 @@ class Version
 			throw new InvalidVersionException('Version must contain three chunks.');
 		}
 		return array_map(function ($part) {
-			return $part === '*' ? '*' : (int) $part;
+			if ($part !== '*') {
+				if (!is_numeric($part)) {
+					throw new InvalidVersionException('Version chunk must be numeric.');
+				}
+				$part = (int) $part;
+			}
+			return $part;
 		}, $parts);
 	}
 
